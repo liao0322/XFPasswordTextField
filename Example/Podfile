@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XFPasswordTextField_Example' do
+  pod 'XFPasswordTextField', :path => '../'
+
+  target 'XFPasswordTextField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
