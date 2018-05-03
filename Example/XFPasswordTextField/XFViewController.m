@@ -7,9 +7,10 @@
 //
 
 #import "XFViewController.h"
+#import "XFPasswordTextField.h"
 
 @interface XFViewController ()
-
+@property (strong, nonatomic) XFPasswordTextField *psTextField;
 @end
 
 @implementation XFViewController
@@ -17,13 +18,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    
+    _psTextField = [[XFPasswordTextField alloc] initWithFrame:CGRectMake(50, 100, 180, 30)];
+    _psTextField.maxPasswordLength = 6;
+    //    psTextField.dotViewSpacing = 0;
+    //    psTextField.dotStyle = XFPasswordTextFieldDotStyleDot;
+    _psTextField.dotStyle = XFPasswordTextFieldDotStyleEasterisk;
+    _psTextField.editEndBlock = ^(NSString *text) {
+        NSLog(@"输入完成 %@", text);
+    };
+    [self.view addSubview:_psTextField];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [_psTextField becomeFirstResponder];
 }
 
 @end

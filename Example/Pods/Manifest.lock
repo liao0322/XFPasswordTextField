@@ -1,0 +1,16 @@
+PODS:
+  - XFPasswordTextField (0.1.0)
+
+DEPENDENCIES:
+  - XFPasswordTextField (from `../`)
+
+EXTERNAL SOURCES:
+  XFPasswordTextField:
+    :path: ../
+
+SPEC CHECKSUMS:
+  XFPasswordTextField: 03e580d80a0c240e1623855ee1ba56d205c3a176
+
+PODFILE CHECKSUM: 3b5731764a929752152d1b63996f7fdb6cc172dd
+
+COCOAPODS: 1.4.0
