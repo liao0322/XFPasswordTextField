@@ -79,6 +79,9 @@
 
 - (void)textFieldDidChanged:(UITextField *)tf {
     if (tf.text.length == self.maxPasswordLength) {
+        if (self.editEndBlock) {
+            self.editEndBlock(tf.text);
+        }
         [tf resignFirstResponder];
     }
 
@@ -102,15 +105,9 @@
         return NO;
     }
     
-    if (textField.text.length == self.maxPasswordLength) { // 密码最多只能输入6位
+    if (textField.text.length == self.maxPasswordLength) { // 密码最多能输入多少位
         return NO;
     }
-    if (textField.text.length == self.maxPasswordLength - 1) {
-        if (self.editEndBlock) {
-            self.editEndBlock(textField.text);
-        }
-    }
-
     return YES;
 }
 
