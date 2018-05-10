@@ -22,4 +22,6 @@
 /// 让内部的 textfield 成为第一响应者
 - (void)becomeFirstResponder;
 
+- (void)createUI;
+
 @end

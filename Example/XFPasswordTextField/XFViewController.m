@@ -28,6 +28,7 @@
     _psTextField.editEndBlock = ^(NSString *text) {
         NSLog(@"输入完成 %@", text);
     };
+    
     [self.view addSubview:_psTextField];
 }
 

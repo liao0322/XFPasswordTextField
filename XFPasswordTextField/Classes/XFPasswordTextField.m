@@ -41,11 +41,11 @@
     [self addSubview:self.textField];
 }
 
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    [self createDotView];
+- (void)createUI {
+    [self createDotViews];
 }
 
-- (void)createDotView {
+- (void)createDotViews {
     
     NSMutableArray *tempArray = [NSMutableArray arrayWithCapacity:self.maxPasswordLength];
     
