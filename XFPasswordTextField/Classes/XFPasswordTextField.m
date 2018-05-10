@@ -18,15 +18,27 @@
 
 @implementation XFPasswordTextField
 
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _dotViewSpacing = 0;
-        _maxPasswordLength = 4;
-        _dotStyle = XFPasswordTextFieldDotStyleEasterisk;
-        [self addSubview:self.textField];
+        [self commonInit];
     }
     return self;
+}
+
+- (void)commonInit {
+    _dotViewSpacing = 0;
+    _maxPasswordLength = 4;
+    _dotStyle = XFPasswordTextFieldDotStyleEasterisk;
+    [self addSubview:self.textField];
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
