@@ -24,4 +24,6 @@
 
 - (void)createUI;
 
+@property (copy, nonatomic) void (^textFieldValueChangedBlock)(UITextField *tf);
+
 @end

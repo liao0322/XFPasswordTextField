@@ -78,6 +78,9 @@
 }
 
 - (void)textFieldDidChanged:(UITextField *)tf {
+    if (self.textFieldValueChangedBlock) {
+        self.textFieldValueChangedBlock(tf);
+    }
     if (tf.text.length == self.maxPasswordLength) {
         if (self.editEndBlock) {
             self.editEndBlock(tf.text);
